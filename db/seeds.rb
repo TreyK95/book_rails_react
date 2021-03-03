@@ -5,13 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+<<<<<<< HEAD
 require "faker"
 
+=======
+
+require "faker"
+
+catagories = ["food", "travel", "misc"]
+
+>>>>>>> 7f76cd7ebb50f692900a091ab93fb28ed05a8952
 10.times do |i|
   Book.create(
     title: Faker::Hacker.abbreviation,
     author: Faker::Hacker.say_something_smart,
   )
 end
+<<<<<<< HEAD
 
 puts "seeded books: #{Book.all.size}"
+=======
+>>>>>>> 7f76cd7ebb50f692900a091ab93fb28ed05a8952
