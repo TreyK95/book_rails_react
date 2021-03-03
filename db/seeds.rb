@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+require "faker"
+
+catagories = ["food", "travel", "misc"]
+
+10.times do |i|
+  Book.create(
+    title: Faker::Hacker.abbreviation,
+    author: Faker::Hacker.say_something_smart,
+  )
+end
