@@ -2,14 +2,14 @@ import React from 'react'
 import Book from './Book'
 
 const Books = (props) => {
-  const {header, books, deleteBook} = props
+  const {header, books, deleteBook, showForm} = props
     
   const renderBooks = () =>{
       if(books.length == 0){
           return <p>no books</p>
       }
 
-      return books.map( book => <Book deleteBook={deleteBook} key={book.id} {...book}/>)
+      return books.map( book => <Book showForm={showForm} deleteBook={deleteBook} key={book.id} {...book}/>)
   }
   return (
       <>

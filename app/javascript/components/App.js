@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Books from './Books'
+import BookForm from './BookForm'
 import axios from 'axios'
 
 
@@ -11,6 +12,7 @@ const App = () =>{
 
   const [books, setBooks] = useState([])
   const [loading, setLoading] = useState(false)
+  const [showForm, setShowForm] = useState(false)
 
   const getBooks = async () =>{
     console.log('getBooks called')
@@ -50,7 +52,8 @@ const App = () =>{
         <h1>App</h1>
         <button disabled={loading} onClick={getBooks}>{loading ? 'loading': 'getBooks'}</button>
         {/* <button disabled={loading} onClick={getItemsNoAsync}>{loading ? 'loading': 'getItems'}</button> */}
-        <Books deleteBook={deleteBook} header='Books' books={books}/>
+        <BookForm />
+        <Books deleteBook={deleteBook} header='Books' books={books} showForm={showForm}/>
     </>
     )
 }
