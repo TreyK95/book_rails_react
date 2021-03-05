@@ -9,8 +9,8 @@ require "faker"
 
 10.times do |i|
   Book.create(
-    title: Faker::Hacker.abbreviation,
-    author: Faker::Hacker.say_something_smart,
+    title: Faker::Book.title,
+    author: Faker::Book.author,
   )
 end
 

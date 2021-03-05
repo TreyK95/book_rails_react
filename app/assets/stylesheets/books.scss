@@ -13,42 +13,50 @@ body {
 h1 {
   color:whitesmoke;
 }
+
 .books-container {
-background-color: rgb(62, 62, 70);
-color: whitesmoke;
-padding: 10px;
-max-width: 800px;
-display: flex;
-flex-direction: column;
+  background-color: rgb(35, 35, 39);
+  color: whitesmoke;
+  padding: 10px;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
 
 }
 
 .book-container {
-  background: rgb(62, 62, 70);
+    padding:20px;
+    background: rgb(35, 35, 39);
+    color: whitesmoke;
+    margin: 10px;
+    border: 2px solid whitesmoke;
+
+    display: flex;
+    flex-direction: column;
+
+    .book-header {
+        display: flex;
+        justify-content: space-between;
+        div {
+            display: flex; 
+        }
+    }
+    
+
+    
+    .book-footer {
+        justify-content: space-between;
+
+    }
+
+}
+
+button {
+  padding: 5px;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: rgb(32,32,32);
+  background-color: rgb(80,80,80);
   color: whitesmoke;
-  margin:10px;
-  border: 2px solid whitesmoke;
-
-  display: flex;
-  flex-direction: column;
-
-  .book-header {
-      display: flex;
-      justify-content: space-between;
-      div {
-          display: flex; 
-      }
-  }
-  
-  h1 {
-      color: whitesmoke;
-
-  }  
-  
-  .book-footer {
-      display: flex;
-      justify-content: space-between;
-
-  }
-
+  margin: 0px 0px 0px 0px;
 }

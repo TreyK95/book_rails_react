@@ -4,14 +4,46 @@ class BooksController < ApplicationController
    end
 
    # GET localhost:3000/items => render items json
-   #[{"id":1,"category":"misc","name":"XML","description":"The GB panel is down, hack the primary panel so we can transmit the EXE array!","likes":0,"created_at":"2021-03-03T16:48:47.564Z","updated_at":"2021-03-03T16:48:47.564Z"}]
    def index
      @books = Book.order(title: :desc)
      render json: @books
    end
 
+   def create
+    @book = Book.new(books_params)
+    if @book.save
+       render json: @book
+    else
+       render json: {error: 422, message: @book.errors.full_messages}
+    end
+   end
+
+   def edit
+    @book = Book.find(params[:id])
+
+    render json: @book
+  end
+
+  def update
+    book = Book.find(params[:id])
+     
+    if(book.update(books_params))
+        render json: book
+    else
+       render json: {error: 422, message: book.errors.full_messages}
+    end
+  end
+
    def destroy
      @book = Book.find(params[:id]).destroy
      render json: @book
    end
+
+   private
+
+   def books_params
+     params.require(:book).permit(:title, :author)
+   end
+
+
 end
